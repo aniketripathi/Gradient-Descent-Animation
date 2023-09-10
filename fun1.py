@@ -6,7 +6,7 @@ class Fun(AbsFun):
     def __init__(self):
         super().__init__()
         self.xrange = (-15, 6)
-        self.xrange = (-10, 6)
+        self.yrange = (-10, 6)
         self.init_point = (6, 6)
         self.n = 30
         self.name = "e^x + e^y - 2*x*x - 2*y*y"

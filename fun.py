@@ -6,7 +6,7 @@ class AbsFun:
     def __init__(self):
         self.n = 30
         self.xrange = (-10, 10)
-        self.xrange = (-10, 10)
+        self.yrange = (-10, 10)
         self.init_point = (10, 10)
         self.rate = 1
         self.count = 20

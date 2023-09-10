@@ -6,7 +6,7 @@ import matplotlib.animation as animation
 def animate(fun, debug=False):
     n = fun.n + 1
     xstart, xend = fun.xrange
-    ystart, yend = fun.xrange
+    ystart, yend = fun.yrange
     rate = fun.rate
     m = fun.count
     title = "f(x,y) = " + fun.name
@@ -14,6 +14,7 @@ def animate(fun, debug=False):
     dx = fun.dx
     dy = fun.dy
     dlen = fun.dlen
+    rdigit = 4
 
     xdata = np.zeros(n)
     ydata = np.zeros(n)
@@ -47,9 +48,9 @@ def animate(fun, debug=False):
         d_len = dlen(u, v)
 
         if debug:
-            print(i, round(u, 4), round(v, 4), round(z, 4))
+            print(i, round(u, rdigit), round(v, rdigit), round(z, rdigit))
 
-        if d_len > 0:
+        if round(d_len, rdigit) > 0:
             xdata[i + 1] = u - d_x / d_len * rate
             ydata[i + 1] = v - d_y / d_len * rate
             zdata[i + 1] = get(u, v)
